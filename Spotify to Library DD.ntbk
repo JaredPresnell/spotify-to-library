@@ -1,0 +1,22 @@
+**** DESIGN DOCUMENT: Spotify Library Project ****
+OVERVIEW: Interact with Spotify to organize a music library outside of Spotify. The project is two parts, the first being a project with the spotify API and the second being a project maybe with python or maybe strictly excel. 
+
+    1: Create a program that interacts with the spotify API to export all your currently saved songs from Spotify, as well as all of the songs within each of your playlists. 
+
+    2: Then, create a way to compare these songs to an external music library, either an excel spreadsheet or maybe something in a database.
+
+SECTION: Use case for Jared
+    My main use case is, I have a bunch of songs in MP3 format, and periodically I go through some of my Spotify playlists and download the new songs that I have added. The problem for me is, it's not very fast to compare them by hand, and I also don't have any sort of real time data on the state of my music library without comparing them by hand.
+
+    If the comparison was automated, it would be very easy to see which songs I needed to download, and download them one or two at a time. Right now I usually do big batches, because it takes quite a bit of time to get oriented where you are in a playlist, to start figuring out which songs you need. 
+
+TODO: Decide if songs should export to an excel spreadsheet or to a database, or both
+
+NOTE: I'm not sure what the best language to build this in is
+    TODO: Ask Kevin 
+
+
+
+
+IDEA: Once we easily can export all of our stuff and it's organized, we could fairly easily create a program, maybe using some graph theory, to like create options for mixes in a graphic format based on key and bpm, and some user input parameters eg "max bpm dif" = 8%
+    NOTE: this is probably it's own project really.
