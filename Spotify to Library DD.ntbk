@@ -22,23 +22,25 @@ IDEA: Once we easily can export all of our stuff and it's organized, we could fa
     NOTE: this is probably it's own project really.
 
 
-Project plan:
-  1) Use node / Express
-    Likely the easiest way to spin up a website that allows you to click buttons and have it run some client methods
-  2) Create spotify client if not already present (Jared probably has some of these written somewhere)
-    Should have ability to call:
-      - getTracks(userId, limit, offset)
-  3) Create spotify domain logic
-    getAllUserTracks
-      - concatenates paginated spotifyClient::getTracks results 
-    _convertJsonToCSV(spotifyObj) -> spotifyCsv
-  4) Create spotify repository logic (optional)
-    Note: If saving to a DB, need to set up a base mysql (or mongo, or whatever) client that reads our .env file and connects to some instance of the db
-    - SpotifyFactory(spotifyRepository) -> Spotify
-      Note for Jared: SpotifyFactory returns the Spotify object which calls the domain (3) methods. If we want database reads/writes, we should write the DB logic somewhere separate from the domain logic
-    - SpotifyRepository
-      - saveUserTrack(spotifyObj, userId)
-      - saveUserTracks(spotifyObjects = [], userId)
-      - readUserTracks(userId, limit = 100, offset = 0)
-      - readUserTrack(spotifyId, userId)
+SECTION: Project plan
+    1) Use node / Express
+        Likely the easiest way to spin up a website that allows you to click buttons and have it run some client methods
+    2) Create spotify client if not already present (Jared probably has some of these written somewhere)
+        Should have ability to call:
+        - getTracks(userId, limit, offset)
+    3) Create spotify domain logic
+        getAllUserTracks
+        - concatenates paginated spotifyClient::getTracks results 
+        _convertJsonToCSV(spotifyObj) -> spotifyCsv
+    4) Create spotify repository logic (optional)
+        Note: If saving to a DB, need to set up a base mysql (or mongo, or whatever) client that reads our .env file and connects to some instance of the db
+        - SpotifyFactory(spotifyRepository) -> Spotify
+        Note for Jared: SpotifyFactory returns the Spotify object which calls the domain (3) methods. If we want database reads/writes, we should write the DB logic somewhere separate from the domain logic
+        - SpotifyRepository
+        - saveUserTrack(spotifyObj, userId)
+        - saveUserTracks(spotifyObjects = [], userId)
+        - readUserTracks(userId, limit = 100, offset = 0)
+        - readUserTrack(spotifyId, userId)
+
+    NOTE: Set up serverless S3 with Lambdas to do stuff 
 
